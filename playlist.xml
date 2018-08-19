@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="playlist_FO.xsl"?>
+<?xml-stylesheet type="text/xsl" href="playlist_HTML.xsl"?>
+<?xml-model href="playlist.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<seznam_videi xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="playlist.xsd" lid="TLNeF5Qk9oomXQY5kP5o5LlS">
+    <titulek>Můj seznam videí</titulek>
+    <autor chid="5CNqF5QkeIomWQY5jOao2LlZ">
+        <jmeno>Martin Kapal</jmeno>
+        <google_plus>102625319274607591725</google_plus>
+        <overeno>false</overeno>
+    </autor>
+    <vytvoreno>2011-07-25T12:34:56Z</vytvoreno>
+    <aktualizovano>2015-11-10T10:25:44Z</aktualizovano>
+    <verejne>true</verejne>
+    <videa>
+        <video vid="ppA3r9NfkAI">
+            <titulek>Awkward Laughing</titulek>
+            <autor chid="UCQlVOYJyQp64rA12ac0mv6g">
+                <jmeno>LAHWF</jmeno>
+                <google_plus>166384669325154060166</google_plus>
+                <overeno>true</overeno>
+            </autor>
+            <nahrano>2014-03-03T11:20:02Z</nahrano>
+            <publikovano>2014-03-03T11:20:02Z</publikovano>
+            <delka>PT3M43S</delka>
+            <zhlednuti>1916888</zhlednuti>
+            <likes>40201</likes>
+            <dislikes>1188</dislikes>
+            <kvality>
+                <kvalita>1080p</kvalita>
+                <kvalita>720p</kvalita>
+                <kvalita>480p</kvalita>
+                <kvalita>360p</kvalita>
+                <kvalita>240p</kvalita>
+            </kvality>
+            <titulky>
+                <jazyk lang="en">English</jazyk>
+            </titulky>
+            <popis>Losing my composure a few times while getting directions.</popis>
+            <komentare>
+                <komentar cid="z12tyfwihxm5dfllb23lhxl4fsacwd4d">
+                    <autor chid="UCQlVOYJyQp64rA12ac0mv6g">
+                        <jmeno>zepps88</jmeno>
+                        <overeno>false</overeno>
+                    </autor>
+                    <zverejneno>2014-03-14T19:56:08Z</zverejneno>
+                    <text>This is awkward lel</text>
+                    <likes>8</likes>
+                    <dislikes>2</dislikes>
+                </komentar>
+                <komentar cid="sr84set784se78tsese3lhxl4seIUe48">
+                    <autor chid="UAeteYJyQp64rA12ac0mR47a">
+                        <jmeno>qwertyguy</jmeno>
+                        <overeno>false</overeno>
+                    </autor>
+                    <zverejneno>2014-03-14T10:11:15Z</zverejneno>
+                    <text>Great episode!</text>
+                    <likes>0</likes>
+                    <dislikes>0</dislikes>
+                </komentar>
+            </komentare>
+        </video>
+        <video vid="o268qbb_0BM">
+            <titulek>The Science of Awkwardness</titulek>
+            <autor chid="UC6nSFpj9HTCZ5t-N3Rm3-HA">
+                <jmeno>Vsauce</jmeno>
+                <google_plus>112244684143881021368</google_plus>
+                <overeno>true</overeno>
+            </autor>
+            <nahrano>2015-03-25T08:15:42Z</nahrano>
+            <publikovano>2015-03-25T08:15:42Z</publikovano>
+            <delka>PT13M55S</delka>
+            <zhlednuti>4290137</zhlednuti>
+            <likes>135581</likes>
+            <dislikes>1082</dislikes>
+            <kvality>
+                <kvalita>2160p</kvalita>
+                <kvalita>1440p</kvalita>
+                <kvalita>1080p</kvalita>
+                <kvalita>720p</kvalita>
+                <kvalita>480p</kvalita>
+                <kvalita>360p</kvalita>
+                <kvalita>240p</kvalita>
+            </kvality>
+            <titulky>
+                <jazyk lang="en">English</jazyk>
+                <jazyk lang="de">Deutsch</jazyk>
+                <jazyk lang="fr">Français</jazyk>
+                <jazyk lang="cs">Čeština</jazyk>
+            </titulky>
+            <popis>awkward.........<br/>
+                Sources and extra links below!<br/>
+                me on twitter: http://www.twitter.com/tweetsauce<br/>
+                me on instagram: http://www.instagram.com/electricpants<br/>
+                music by http://www.youtube.com/JakeChudnow</popis>
+            <komentare></komentare>
+        </video>
+        <video vid="uxpDa-c-4Mc">
+            <titulek>Drake - Hotline Bling</titulek>
+            <autor chid="UCQznUf1SjfDqx65hX3zRDiA">
+                <jmeno>Drake - Hotline Bling</jmeno>
+                <google_plus>113249328398213828685</google_plus>
+                <overeno>true</overeno>
+            </autor>
+            <nahrano>2015-10-26T12:10:05Z</nahrano>
+            <publikovano>2015-10-27T20:00:00Z</publikovano>
+            <delka>PT4M55S</delka>
+            <zhlednuti>202756251</zhlednuti>
+            <likes>1493493</likes>
+            <dislikes>135461</dislikes>
+            <kvality>
+                <kvalita>1080p</kvalita>
+                <kvalita>720p</kvalita>
+                <kvalita>480p</kvalita>
+                <kvalita>360p</kvalita>
+                <kvalita>240p</kvalita>
+            </kvality>
+            <popis>Hotline Bling (Official Video)<br/>
+                Available for download here! http://republicrec.co/DrakeHotlineBling<br/>
+                <br/>
+                Share/Stream “Hotline Bling” on Spotify: https://open.spotify.com/track/6nmz4i...<br/>
+                <br/>
+                Directed by Director X<br/>
+                Produced by Evan Landry<br/>
+                Edited by Laura McMillan<br/>
+                Production Company: Creative Soul<br/>
+                <br/>
+                Music video by Drake performing Hotline Bling. © 2015 Cash Money Records Inc.<br/>
+                <br/>
+                http://vevo.ly/R0NNDX</popis>
+            <komentare>
+                <komentar cid="bcdtyfseu667deel6zlhxl4fsacwd7ga">
+                    <autor chid="UC6WS2bMQDm3-IPZVX_wQenQ">
+                        <jmeno>Random Guy</jmeno>
+                        <overeno>false</overeno>
+                    </autor>
+                    <zverejneno>2015-11-07T15:18:05Z</zverejneno>
+                    <text>So awesome!</text>
+                    <likes>2</likes>
+                    <dislikes>1</dislikes>
+                </komentar>
+            </komentare>
+        </video>
+        <video vid="C_S5cXbXe-4">
+            <titulek>The OMG Cat</titulek>
+            <autor chid="UCO-0YJc5K8GysIh-VE4ffvw">
+                <jmeno>Davincipop</jmeno>
+                <overeno>false</overeno>
+            </autor>
+            <nahrano>2010-03-22T08:43:59Z</nahrano>
+            <publikovano>2010-03-22T08:43:59Z</publikovano>
+            <delka>PT18S</delka>
+            <zhlednuti>23234443</zhlednuti>
+            <likes>96537</likes>
+            <dislikes>1919</dislikes>
+            <kvality>
+                <kvalita>1080p</kvalita>
+                <kvalita>720p</kvalita>
+                <kvalita>480p</kvalita>
+                <kvalita>360p</kvalita>
+                <kvalita>240p</kvalita>
+            </kvality>
+            <komentare>
+                <komentar cid="z12nhh3aenecitc0m23ssbqwltemff2t">
+                    <autor chid="UCT7Ni33qVh1swFBUeqC9Idw">
+                        <jmeno>Tsya Gant</jmeno>
+                        <overeno>false</overeno>
+                    </autor>
+                    <zverejneno>2014-06-22T09:11:40Z</zverejneno>
+                    <text>The moment you realize school starts tomorrow :'(﻿</text>
+                    <likes>16</likes>
+                    <dislikes>0</dislikes>
+                </komentar>
+                <komentar cid="z12odx1buznzjjwk123xhpg4vq2aznz4">
+                    <autor chid="UCPhfPmNYximtN2ljKoYvDng">
+                        <jmeno>Tsya Gantes</jmeno>
+                        <overeno>false</overeno>
+                    </autor>
+                    <zverejneno>2014-06-22T09:12:40Z</zverejneno>
+                    <text>Awesome</text>
+                    <likes>4</likes>
+                    <dislikes>0</dislikes>
+                </komentar>
+                <komentar cid="z12mwr2qqsr4s3q1522fdz3j5qvrhdl1" replyto="z12nhh3aenecitc0m23ssbqwltemff2t">
+                    <autor chid="UCM3hBGcJ4t27K7btx07uiCw">
+                        <jmeno>Stephanie Smith</jmeno>
+                        <overeno>false</overeno>
+                    </autor>
+                    <zverejneno>2014-06-30T22:50:01Z</zverejneno>
+                    <text>I know right</text>
+                    <likes>1</likes>
+                    <dislikes>0</dislikes>
+                </komentar>
+                <komentar cid="z12tuttpoluyi1ffs23wtt4blyiyhhdn" replyto="z12nhh3aenecitc0m23ssbqwltemff2t">
+                    <autor chid="UCmZWomHoogCQeP91WH9DVQw">
+                        <jmeno>Karl John</jmeno>
+                        <overeno>true</overeno>
+                    </autor>
+                    <zverejneno>2014-07-02T23:30:51Z</zverejneno>
+                    <text>yeah</text>
+                    <likes>0</likes>
+                    <dislikes>4</dislikes>
+                </komentar>
+            </komentare>
+        </video>
+    </videa>
+</seznam_videi>

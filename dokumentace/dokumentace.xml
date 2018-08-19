@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <info>
+        <title>Seznam YouTube videí</title>
+        <author>
+            <personname>
+                <firstname>Martin</firstname>
+                <surname>Kapal</surname>
+            </personname>
+            <email>xkapm25@vse.cz</email>
+        </author>
+    </info>
+    <preface>
+        <title>Úvod</title>
+        <para>Semestrální práce představuje uživatelský seznam videí z webu <link
+                xlink:href="http://www.youtube.com">YouTube</link>. Tento web posloužil rovněž jako
+            inspirace pro strukturu, obsah a vzhled výstupních souborů.</para>
+        <para>Práce se skládá z těchto souborů:<itemizedlist>
+                <listitem>
+                    <para>XML dokument – <filename>playlist.xml</filename></para>
+                </listitem>
+                <listitem>
+                    <para>XML schéma – <filename>playlist.xsd</filename></para>
+                </listitem>
+                <listitem>
+                    <para>XSL transformace do PDF – <filename>playlist_FO.xsl</filename></para>
+                </listitem>
+                <listitem>
+                    <para>XSL transformace do HTML – <filename>playlist_HTML.xsl</filename></para>
+                </listitem>
+                <listitem>
+                    <para>Schematron pravidla – <filename>playlist.sch</filename></para>
+                </listitem>
+            </itemizedlist></para>
+    </preface>
+    <chapter>
+        <title>XML</title>
+        <sect1>
+            <title>Obsah dokumentu</title>
+            <para>XML dokument <filename>playlist.xml</filename> představuje samotný seznam videí.
+                Uvnitř kořenového elementu <code>seznam_videi</code> se nachází titulek seznamu,
+                údaje o autorovi, datum vytvoření a poslední aktualizace seznamu, a údaj o tom, zda
+                se jedná o veřejný nebo soukromý seznam.</para>
+        </sect1>
+        <sect1>
+            <title>Popis elementů</title>
+            <sect2>
+                <title>Údaje o seznamu videí</title>
+                <para>Kořenový element <code>seznam_videi</code> obsahuje atribut <code>lid</code>,
+                    který slouží jako identifikátor. Uvnitř kořenového elementu je jako první je
+                    uveden element <code>titulek</code> obsahující stručný název seznamu.</para>
+                <para>Následují informace o autorovi seznamu. Element <code>autor</code> se váže na
+                    konkrétního uživatele služby YouTube, a tak je tento element použit také u
+                    autorů videí a komentářů. Element obsahuje tyto atributy a podelementy:</para>
+                <itemizedlist>
+                    <listitem>
+                        <para><code>chid</code> – atribut označující ID YouTube kanálu daného
+                            uživatele</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>jmeno</code> – jméno a příjmení nebo uživatelské jméno
+                            autora</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>google_plus</code> – číselné ID Google+ profilu autora</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>overeno</code> – zda se jedná o ověřeného uživatele</para>
+                    </listitem>
+                </itemizedlist>
+                <para>Dále je zde element <code>vytvoreno</code>, značící datum a čas vytvoření seznamu,
+                        <code>aktualizovano</code> datum a čas poslední úpravy seznamu, a nakonec element
+                        <code>verejne</code>, který značí, zda je seznam veřejně dostupný.</para>
+                
+            </sect2>
+            <sect2>
+                <title>Údaje o videu</title>
+                <para>Hned po údajích týkajících se seznamu videí následuje element
+                        <code>videa</code> obsahující jeden nebo více elementů <code>video</code>.
+                    Každý element <code>video</code> je jednoznačně identifikován atributem
+                        <code>vid</code>, pomocí kterého se lze na video odkazovat prostřednictvím
+                    URL.</para>
+                <para>Následuje výčet všech elementů uvnitř <code>video</code> a jejich význam:</para>
+                <itemizedlist>
+                    <listitem>
+                        <para><code>titulek</code> – název videa</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>autor</code> – autor videa (viz výše)</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>nahrano</code> – datum a čas nahrání videa</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>publikovano</code> – datum a čas zveřejnění videa (může se lišit od data nahrání)</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>delka</code> – délka videa</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>zhlednuti</code> – počet zhlédnutí videa</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>likes</code> – počet lidí, kterým se video líbí</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>dislikes</code> – počet lidí, kterým se video nelíbí</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>kvality</code> – seznam dostupných rozlišení videa</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>kvalita</code> – kvalita videa (rozlišení, příp. počet snímků za sekundu)</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>titulky</code> – seznam dostupných jazyků s titulky</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>titulek</code> – jazyk titulků (obsahuje atribut <code>lang</code> představující kód ISO 639-1 daného jazyka)</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>popis</code> – popis videa (může obsahovat řádkování)</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>komentare</code> – seznam všech komentářů týkajících se tohoto videa (viz níže)</para>
+                    </listitem>
+                </itemizedlist>
+            </sect2>
+            <sect2>
+                <title>Údaje o komentářích</title>
+                <para>Ke každému videu jsou připojeny i textové komentáře od uživatelů. Komentáře mohou být hodnoceny kladně nebo záporně.</para>
+                <para>Následuje výčet všech elementů uvnitř <code>komentare</code> a jejich význam:</para>
+                <itemizedlist>
+                    <listitem>
+                        <para><code>komentar</code> – komentář k videu identifikovaný pomocí atributu <code>cid</code>, nepovinný atribut <code>replyto</code> označuje ID komentáře, na který komentář reaguje</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>autor</code> – autor komentáře (viz výše)</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>zverejneno</code> – datum a čas zveřejnění komentáře</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>text</code> – vlastní text komentáře (může obsahovat řádkování pomocí elementu <code>br</code>)</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>likes</code> – počet lidí, kterým se komentář líbí</para>
+                    </listitem>
+                    <listitem>
+                        <para><code>dislikes</code> – počet lidí, kterým se komentář nelíbí</para>
+                    </listitem>
+                </itemizedlist>
+            </sect2>
+        </sect1>
+    </chapter>
+    <chapter>
+        <title>XML Schema</title>
+        <para>Pomocí XML schématu se určuje, které elementy a atributy má XML dokument obsahovat, kolik jich má být a v jakém mají být pořadí. Zároveň XML Schema dovoluje definovat datové typy elementů a atributů.</para>
+        <sect1>
+            <title>Struktura schématu</title>
+            <para>Soubor schématu <filename>playlist.xsd</filename> byl vytvořen ve stylu
+                    <quote>salámová kolečka</quote>. Protože se v dokumentu nachází elementy, které
+                se využívají na více místech, tento styl dovoluje definovat elementy pouze jednou a
+                zpětně se na ně odkazovat z více míst.</para>
+            <para>Téměř všechny definované elementy jsou povinné. Nepovinné elementy jsou
+                    <code>aktualizovano</code> (datum poslední aktualizace seznamu),
+                    <code>titulky</code>, <code>popis</code> videa a <code>komentar</code>. Počet
+                elementů <code>video</code>, <code>kvalita</code>, <code>jazyk</code> a
+                    <code>komentar</code> je neomezený.</para>
+            <para>Co se týče datových typů, pro délku videa jsem zvolil typ
+                <code>xs:duration</code>, který umožňuje zápis ve tvaru např. <code>PT2M18S</code>
+                (12 minut a 18 sekund). Číselné hodnoty mají datový typ <code>xs:int</code>,
+                elementy typu ano/ne používají <code>xs:boolean</code>.</para>
+            <para>Ve schématu je použito několik restrikcí. Identifikátory povolují pouze určitou
+                sadu znaků, a tak byla použita restrikce pomocí regulárních výrazů
+                    <code>[A-Za-z0-9]+</code> či <code>[A-Za-z0-9\-_]+</code>. Zároveň je u
+                některých omezena délka na pevný počet znaků. Regulární výraz je také použit u
+                obsahu elementu <code>kvalita</code>, který musí vyhovovat výrazu
+                    <code>\d+p(60)?</code> (720p, 1080p60 apod.).</para>
+        </sect1>
+    </chapter>
+    <chapter>
+        <title>XSL Transformace</title>
+        <para>Převedení XML dokumentu do formátu PDF a HTML je řešeno pomocí XSL transformace. Pro
+            převod do formátu PDF se využívá formátovacích objektů (FO).</para>
+        <para>Seznam videí je transformován s využití dvou režimů – <code>seznam</code> a
+                <code>detail</code>. Oba výpisy jsou řazeny abecedně podle titulku videa pomocí
+                <code>xsl:sort</code>. Obdobně jsou řazeny komentáře podle oblíbenosti.</para>
+        <para>V transformaci je také využito větvení pomocí <code>xs:if</code> a
+                <code>xs:choose</code>. Také byly použity pojmenované šablony s parametry pro
+            opakované použití při výpisu délky videa nebo data a času.</para>
+        <sect1>
+            <title>Transformace do HTML</title>
+            <para>Převod XML dokumentu do podoby HTML stránek se provádí pomocí souboru
+                    <filename>playlist_HTML.xsl</filename>. Pro vzhled stránky se využívá externího
+                CSS souboru <filename>playlist.css</filename>, ve kterém jsou definovány kaskádové
+                styly pro jednotlivé části dokumentu.</para>
+            <para>HTML výstup je rozdělen do více souborů. Hlavní stránka
+                    <filename>playlist.html</filename> obsahuje stručný výpis všech videí v seznamu.
+                Po kliknutí na miniaturu nebo název videa se zobrazí stránka s podrobnostmi o daném
+                videu. Na stránce je vložen tag <code>iframe</code> s URL videa, takže je možné si
+                video přehrát.</para>
+        </sect1>
+        <sect1>
+            <title>Transformace do PDF</title>
+            <para>Převod do PDF je řešen pomocí formátovacích objektů (FO). Definice pro tuto
+                transformaci jsou v souboru <filename>playlist_FO.xsl</filename>.</para>
+            <para>V záhlaví stránek je uveden autor semestrální práce, v zápatí pak číslo stránky.
+                Na první stránce je stručný seznam videí, který se odkazuje na detailní výpis na
+                dalších stránkách pomocí odkazů.</para>
+        </sect1>
+    </chapter>
+    <chapter>
+        <title>Schematron</title>
+        <para>Schematron představuje soubor pravidel, která musí XML dokument splňovat. Pokud je nesplňuje, zobrazí se při validaci chybová zpráva.</para>
+        <para>Soubor <filename>playlist.sch</filename> kontroluje:</para>
+        <itemizedlist>
+            <listitem><para>datum vytvoření a aktualizace seznamu</para></listitem>
+            <listitem><para>datum nahrání a publikování videa</para></listitem>
+            <listitem><para>datum přidání komentáře</para></listitem>
+            <listitem><para>jedinečnost identifikátorů videí a komentářů</para></listitem>
+        </itemizedlist>
+    </chapter>
+</book>

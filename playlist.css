@@ -1,0 +1,178 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    margin-top: 20px;
+    line-height: 16px;
+}
+
+#hlavni {
+    width: 800px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 26px;
+}
+
+.blok {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 10px;
+     box-shadow: 0px 1px 2px #ddd;
+}
+
+table {
+    font-size: 12px;
+}
+
+a {
+    color: #0061bc;
+}
+
+a:hover {
+    color: #1184d4;
+}
+
+#podnadpis {
+    color: #888;
+}
+
+#seznam {
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#seznam td {
+    padding: 5px 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#seznam tr:last-child td {
+    border-bottom: 0;
+}
+
+#seznam .delka {
+    text-align: right;
+}
+
+.tlacitko {
+    display: inline-block;
+    background-color: #0061bc;
+    color: #fff;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.tlacitko:hover {
+    background-color: #1184d4;
+    color: #fff;
+}
+
+.overeno {
+    color: #0061bc;
+    padding-left: 3px;
+    cursor: pointer;
+}
+
+.video_area iframe {
+    vertical-align: bottom;
+}
+
+.video_bar {
+    overflow: hidden;
+    background-color: #333;
+    color: #bbb;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 15px;
+    font-size: 13px;
+}
+
+.video_bar > .delka {
+    float: left;
+}
+
+.video_bar > .kvality_titulky {
+    float: right;
+    font-size: 11px;
+}
+
+.video_bar .titulky {
+    padding-left: 20px;
+}
+
+.zakladni_info {
+    overflow: hidden;
+}
+
+.zakladni_info h1 {
+    margin-bottom: 10px;
+}
+
+.titulek_autor {
+    float: left;
+}
+
+.datum_nahrani_publikovani {
+    font-weight: bold;
+}
+
+.statistiky {
+    margin-top: 10px;
+    float: right;
+    text-align: right;
+}
+
+.statistiky .dislikes {
+    padding-left: 10px;
+}
+
+.zhlednuti {
+    line-height: 28px;
+    color: #000;
+    font-size: 23px;
+}
+
+.likes {
+    color: green;
+}
+
+.dislikes {
+    color: #cc0000;
+}
+
+.komentar {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.komentar:last-child {
+    margin-bottom: 0;
+}
+
+.komentar_odpoved {
+    margin-left: 30px;
+}
+
+.datum_komentare {
+    color: #777;
+    padding-left: 10px;
+}
+
+.hodnoceni {
+    font-size: 11px;
+}
+
+h2 {
+    margin-top: 5px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+footer {
+    margin: 30px 0;
+    color: #aaa;
+    text-align: center;
+}

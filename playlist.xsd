@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="seznam_videi">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="titulek"/>
+                <xs:element ref="autor"/>
+                <xs:element ref="vytvoreno"/>
+                <xs:element ref="aktualizovano" minOccurs="0"/>
+                <xs:element ref="verejne"/>
+                <xs:element ref="videa"/>
+            </xs:sequence>
+            <xs:attribute name="lid" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[A-Za-z0-9]+"/>
+                        <xs:length value="24"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="videa">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="video"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="video">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="titulek"/>
+                <xs:element ref="autor"/>
+                <xs:element ref="nahrano"/>
+                <xs:element ref="publikovano"/>
+                <xs:element ref="delka"/>
+                <xs:element ref="zhlednuti"/>
+                <xs:element ref="likes"/>
+                <xs:element ref="dislikes"/>
+                <xs:element ref="kvality"/>
+                <xs:element minOccurs="0" ref="titulky"/>
+                <xs:element ref="popis" minOccurs="0"/>
+                <xs:element ref="komentare"/>
+            </xs:sequence>
+            <xs:attribute name="vid" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[A-Za-z0-9\-_]+"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="autor">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="1" ref="jmeno"/>
+                <xs:element minOccurs="0" ref="google_plus"/>
+                <xs:element ref="overeno"/>
+            </xs:sequence>
+            <xs:attribute name="chid" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[A-Za-z0-9\-_]+"/>
+                        <xs:length value="24"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="kvality">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="kvalita"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="titulky">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="jazyk"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="komentare">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="komentar"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="komentar">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="autor"/>
+                <xs:element ref="zverejneno"/>
+                <xs:element ref="text"/>
+                <xs:element ref="likes"/>
+                <xs:element ref="dislikes"/>
+            </xs:sequence>
+            <xs:attribute name="cid" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[A-Za-z0-9]+"/>
+                        <xs:length value="32"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="replyto">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[A-Za-z0-9]+"/>
+                        <xs:length value="32"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="titulek" type="xs:string"/>
+    <xs:element name="jmeno" type="xs:string"/>
+    <xs:element name="username" type="xs:string"/>
+    <xs:element name="google_plus">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[0-9]+"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="overeno" type="xs:boolean"/>
+    <xs:element name="vytvoreno" type="xs:dateTime"/>
+    <xs:element name="aktualizovano" type="xs:dateTime"/>
+    <xs:element name="verejne" type="xs:boolean"/>
+    <xs:element name="nahrano" type="xs:dateTime"/>
+    <xs:element name="publikovano" type="xs:dateTime"/>
+    <xs:element name="delka" type="xs:duration"> </xs:element>
+    <xs:element name="zhlednuti">
+        <xs:simpleType>
+            <xs:restriction base="xs:int">
+                <xs:minInclusive value="0"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="likes">
+        <xs:simpleType>
+            <xs:restriction base="xs:int">
+                <xs:minInclusive value="0"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="dislikes">
+        <xs:simpleType>
+            <xs:restriction base="xs:int">
+                <xs:minInclusive value="0"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="kvalita">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="\d+p(60)?"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="jazyk">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="lang" use="required">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:length value="2"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="popis">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="br"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="br">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="zverejneno" type="xs:dateTime"/>
+    <xs:element name="text" default="">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="br"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
